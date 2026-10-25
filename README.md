@@ -38,15 +38,27 @@ The ref is the player's `<awayfl-player>` element, so functions the SWF adds wit
 
 ### Without a build step
 
-Using [esm.sh](https://esm.sh):
+Using [jsDelivr](https://www.jsdelivr.com) and an import map:
 
 ```html
+<script type="importmap">
+  {
+    "imports": {
+      "react": "https://cdn.jsdelivr.net/npm/react@19.3.1/+esm",
+      "react-dom/client": "https://cdn.jsdelivr.net/npm/react-dom@19.3.1/client/+esm",
+      "@afterswf/react": "https://cdn.jsdelivr.net/npm/@afterswf/react@0.1.0/dist/index.js",
+      "@afterswf/embed": "https://cdn.jsdelivr.net/npm/@afterswf/embed@0.1.4/dist/embed.mjs",
+      "@afterswf/embed/version": "https://cdn.jsdelivr.net/npm/@afterswf/embed@0.1.4/dist/version.mjs"
+    }
+  }
+</script>
+
 <div id="root"></div>
 
 <script type="module">
-  import { createElement } from 'https://esm.sh/react@19';
-  import { createRoot } from 'https://esm.sh/react-dom@19/client';
-  import { AfterSWF } from 'https://esm.sh/@afterswf/react?deps=react@19';
+  import { createElement } from 'react';
+  import { createRoot } from 'react-dom/client';
+  import { AfterSWF } from '@afterswf/react';
 
   createRoot(document.getElementById('root')).render(
     createElement(AfterSWF, { src: 'game.swf', width: 550, height: 400, flashvars: { level: 1 } })
@@ -54,7 +66,8 @@ Using [esm.sh](https://esm.sh):
 </script>
 ```
 
-`?deps=react@19` makes the component use the same copy of React as the page.
+Keep `react` and `react-dom` on the same exact version, as jsDelivr's `react-dom` imports that version of
+`react`, so the page, `react-dom` and the component all share one copy of React.
 
 ## Props
 
