@@ -46,9 +46,9 @@ Using [jsDelivr](https://www.jsdelivr.com) and an import map:
     "imports": {
       "react": "https://cdn.jsdelivr.net/npm/react@19.3.1/+esm",
       "react-dom/client": "https://cdn.jsdelivr.net/npm/react-dom@19.3.1/client/+esm",
-      "@afterswf/react": "https://cdn.jsdelivr.net/npm/@afterswf/react@0.1.0/dist/index.js",
-      "@afterswf/embed": "https://cdn.jsdelivr.net/npm/@afterswf/embed@0.1.4/dist/embed.mjs",
-      "@afterswf/embed/version": "https://cdn.jsdelivr.net/npm/@afterswf/embed@0.1.4/dist/version.mjs"
+      "@afterswf/react": "https://cdn.jsdelivr.net/npm/@afterswf/react@0.1/dist/index.js",
+      "@afterswf/embed": "https://cdn.jsdelivr.net/npm/@afterswf/embed@0.1/dist/embed.mjs",
+      "@afterswf/embed/version": "https://cdn.jsdelivr.net/npm/@afterswf/embed@0.1/dist/version.mjs"
     }
   }
 </script>
@@ -67,7 +67,8 @@ Using [jsDelivr](https://www.jsdelivr.com) and an import map:
 ```
 
 Keep `react` and `react-dom` on the same exact version, as jsDelivr's `react-dom` imports that version of
-`react`, so the page, `react-dom` and the component all share one copy of React.
+`react`, so the page, `react-dom` and the component all share one copy of React. Use the same version range
+for both `@afterswf/embed` URLs.
 
 ## Props
 
