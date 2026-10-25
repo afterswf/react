@@ -1,0 +1,58 @@
+{
+  "name": "@afterswf/react",
+  "version": "0.1.0",
+  "description": "React component for AfterSWF, which plays Flash content in the browser",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "watch": "tsc -p tsconfig.json --watch",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "react",
+    "Flash",
+    "SWF",
+    "SWFObject",
+    "AfterSWF",
+    "AwayFL"
+  ],
+  "author": "Mesmotronic",
+  "license": "MIT",
+  "homepage": "https://github.com/afterswf/react#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/afterswf/react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/afterswf/react/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "@afterswf/embed": ">=0.1.4",
+    "react": ">=17"
+  },
+  "devDependencies": {
+    "@afterswf/embed": "file:../embed",
+    "@types/react": "^19.3.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "typescript": "^5.9.3"
+  }
+}
