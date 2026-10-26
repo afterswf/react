@@ -21,7 +21,7 @@
     "build": "tsc -p tsconfig.json",
     "watch": "tsc -p tsconfig.json --watch",
     "prepare": "npm run build",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "node bumpIfPublished.mjs && npm run build"
   },
   "keywords": [
     "react",
